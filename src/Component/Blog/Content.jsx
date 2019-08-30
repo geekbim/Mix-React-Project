@@ -1,0 +1,23 @@
+import React, { Component } from 'react'
+
+const Content = (props) => {
+    return (
+        <div className="card mb-3 blog my-5">
+            <div className="row no-gutters">
+                <div className="col-md-4 py-2 pl-1">
+                    <img src="https://placeimg.com/200/150/tech" className="card-img" alt="Image Card"/>
+                </div>
+                <div className="col-md-8">
+                    <div className="card-body">
+                        <h5 className="card-title text-left" onClick={() => {props.goDetail(props.data.id)}}>{props.data.title}</h5>
+                        <p className="card-text text-left">{props.data.body}</p>
+                        <button type="button" className="update btn btn-warning float-left rounded mb-3" onClick={() => {props.update(props.data)}}>Update</button>
+                        <button type="button" className="remove btn btn-danger float-left rounded mb-3 ml-2 " onClick={() => {props.remove(props.data.id)}}>Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Content
